@@ -17,21 +17,39 @@ PHP >= 5.2
 require_once "includes/PeriodDate.php";
 
 $pd = new PeriodDate();
+
+// Get current week first day.
+$date = $pd->firstDayOf('week');
+echo 'The first day of the current week is: ' . $date->format('l, jS F Y') . "\n";
+
+// Get current week last day.
+$date = $pd->lastDayOf('week');
+echo 'The last day of the current week is: ' . $date->format('l, jS F Y') . "\n\n";
+
+?>
+```
+
+### More Examples
+```php
+<?php
+require_once "includes/PeriodDate.php";
+
+$pd = new PeriodDate();
 // Get today.
 echo 'Today is: ' . date("l, jS F Y", strtotime("today")) . "\n\n";
-// Get current week.
+// Get current week first and last day.
 $date = $pd->firstDayOf('week');
 echo 'The first day of the current week is: ' . $date->format('l, jS F Y') . "\n";
 $date = $pd->lastDayOf('week');
 echo 'The last day of the current week is: ' . $date->format('l, jS F Y') . "\n\n";
 
-// Get current month.
+// Get current month first and last day.
 $date = $pd->firstDayOf('month');
 echo 'The first day of the current month is: ' . $date->format('l, jS F Y') . "\n";
 $date = $pd->lastDayOf('month');
 echo 'The last day of the current month is: ' . $date->format('l, jS F Y') . "\n\n";
 
-// Get current year.
+// Get current year first and last day.
 $date = $pd->firstDayOf('year');
 echo 'The first day of the current year is: ' . $date->format('l, jS F Y') . "\n";
 $date = $pd->lastDayOf('year');
@@ -39,26 +57,27 @@ echo 'The last day of the current year is: ' . $date->format('l, jS F Y') . "\n\
 
 // Get yesterday.
 echo 'Yesterday is: ' . date("l, jS F Y", strtotime("yesterday")) . "\n\n";
-// Get previous week.
+// Get previous week first and last day.
 $specifiedDate = new DateTime(date('Y'));
 $date          = $pd->firstDayOf('week', $specifiedDate, "last");
 echo 'The first day of the previous week is: ' . $date->format('l, jS F Y') . "\n";
 $date = $pd->lastDayOf('week', $specifiedDate, "last");
 echo 'The last day of the previous week is: ' . $date->format('l, jS F Y') . "\n\n";
 
-// Get previous month.
+// Get previous month first and last day.
 $specifiedDate = new DateTime(date('Y'));
 $date          = $pd->firstDayOf('month', $specifiedDate, "last");
 echo 'The first day of the previous month is: ' . $date->format('l, jS F Y') . "\n";
 $date = $pd->lastDayOf('month', $specifiedDate, "last");
 echo 'The last day of the previous month is: ' . $date->format('l, jS F Y') . "\n\n";
 
-// Get previous year.
+// Get previous year first and last day.
 $specifiedDate = new DateTime(date('Y') - 1);
 $date          = $pd->firstDayOf('year', $specifiedDate, "last");
 echo 'The first day of the previous year is: ' . $date->format('l, jS F Y') . "\n";
 $date = $pd->lastDayOf('year', $specifiedDate, "last");
 echo 'The last day of the previous year is: ' . $date->format('l, jS F Y') . "\n\n";
+
 ?>
 ```
 ## Changes
