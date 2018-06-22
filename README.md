@@ -59,6 +59,7 @@ $date          = $pd->firstDayOf('year', $specifiedDate, "last");
 echo 'The first day of the previous year is: ' . $date->format('l, jS F Y') . "\n";
 $date = $pd->lastDayOf('year', $specifiedDate, "last");
 echo 'The last day of the previous year is: ' . $date->format('l, jS F Y') . "\n\n";
+?>
 ```
 ## Changes
 View change log <a href="https://github.com/ikunyemingor/First-or-Last-Period-Date/blob/master/CHANGES.md" target="_blank">here</a>
