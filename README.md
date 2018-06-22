@@ -14,6 +14,7 @@ PHP >= 5.2
 ### Basic Usage
 ```php
 <?php
+
 require_once "includes/PeriodDate.php";
 
 $pd = new PeriodDate();
@@ -32,6 +33,7 @@ echo 'The last day of the current week is: ' . $date->format('l, jS F Y') . "\n\
 ### More Examples
 ```php
 <?php
+
 require_once "includes/PeriodDate.php";
 
 $pd = new PeriodDate();
