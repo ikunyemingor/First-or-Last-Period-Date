@@ -60,6 +60,9 @@ echo 'The first day of the previous year is: ' . $date->format('l, jS F Y') . "\
 $date = $pd->lastDayOf('year', $specifiedDate, "last");
 echo 'The last day of the previous year is: ' . $date->format('l, jS F Y') . "\n\n";
 ```
+## Changes
+View change log <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">here</a>
+
 ## Contributors
 Ikunyemi Ngor
 
