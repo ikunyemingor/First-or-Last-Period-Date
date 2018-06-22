@@ -64,4 +64,4 @@ echo 'The last day of the previous year is: ' . $date->format('l, jS F Y') . "\n
 Ikunyemi Ngor
 
 ## License
-Released under the Apache License
+Released under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License 2.0</a>
