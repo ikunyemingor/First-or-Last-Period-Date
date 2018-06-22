@@ -1,0 +1,30 @@
+{
+  "name": "ikunyemingor/First-or-Last-Period-Date",
+  "description": "Get the First or Last Day of a Week, Month, Quarter or Year in PHP",
+  "keywords": [
+    "php",
+    "datetime"
+  ],
+  "type": "package",
+  "require": {
+    "php": ">=5.2"
+  },
+  "license": "Apache License 2.0",
+  "authors": [
+    {
+      "name": "Ikunyemi Ngor"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "LostCodes\\": "includes/"
+    }
+  },
+  "version": "0.1.0",
+  "source": {
+    "url": "https://github.com/ikunyemingor/First-or-Last-Period-Date.git",
+    "type": "git",
+    "reference": "master"
+  },
+  "minimum-stability": "dev"
+}

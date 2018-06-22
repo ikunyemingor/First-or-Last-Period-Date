@@ -1,5 +1,7 @@
 <?php
 
+namespace LostCodes;
+
 /**
  * Class PeriodDate - Get the First or Last Day of a Week, Month, Quarter or Year.
  *
@@ -27,14 +29,14 @@ class PeriodDate
     /**
      * Return the first day of the Week/Month/Quarter/Year that the current/provided date falls within.
      *
-     * @param string   $period     The period to find the first day of. ('year', 'quarter', 'month', 'week').
-     * @param DateTime $date       The date to use instead of the current date.
-     * @param string   $periodTime Previous or current periods.
+     * @param string    $period     The period to find the first day of. ('year', 'quarter', 'month', 'week').
+     * @param \DateTime $date       The date to use instead of the current date.
+     * @param string    $periodTime Previous or current periods.
      *
-     * @return DateTime
-     * @throws InvalidArgumentException Error on invalid argument.
+     * @return \DateTime
+     * @throws \InvalidArgumentException Error on invalid argument.
      */
-    public function firstDayOf($period, DateTime $date = NULL, $periodTime = "this")
+    public function firstDayOf($period, \DateTime $date = NULL, $periodTime = "this")
     {
         $period       = strtolower($period);
         $periodTime   = strtolower($periodTime);
@@ -46,10 +48,10 @@ class PeriodDate
         ];
 
         if (!in_array($period, $validPeriods)) {
-            throw new InvalidArgumentException('Period must be one of: ' . implode(', ', $validPeriods));
+            throw new \InvalidArgumentException('Period must be one of: ' . implode(', ', $validPeriods));
         }
 
-        $newDate = ($date === NULL) ? new DateTime() : clone $date;
+        $newDate = ($date === NULL) ? new \DateTime() : clone $date;
 
         switch ($period) {
             case 'year':
@@ -85,14 +87,14 @@ class PeriodDate
     /**
      * Return the last day of the Week/Month/Quarter/Year that the current/provided date falls within.
      *
-     * @param string   $period     The period to find the last day of. ('year', 'quarter', 'month', 'week').
-     * @param DateTime $date       The date to use instead of the current date.
-     * @param string   $periodTime Previous or current periods.
+     * @param string    $period     The period to find the last day of. ('year', 'quarter', 'month', 'week').
+     * @param \DateTime $date       The date to use instead of the current date.
+     * @param string    $periodTime Previous or current periods.
      *
-     * @return DateTime
-     * @throws InvalidArgumentException Error on invalid argument.
+     * @return \DateTime
+     * @throws \InvalidArgumentException Error on invalid argument.
      */
-    public function lastDayOf($period, DateTime $date = NULL, $periodTime = "this")
+    public function lastDayOf($period, \DateTime $date = NULL, $periodTime = "this")
     {
         $period       = strtolower($period);
         $periodTime   = strtolower($periodTime);
@@ -104,10 +106,10 @@ class PeriodDate
         ];
 
         if (!in_array($period, $validPeriods)) {
-            throw new InvalidArgumentException('Period must be one of: ' . implode(', ', $validPeriods));
+            throw new \InvalidArgumentException('Period must be one of: ' . implode(', ', $validPeriods));
         }
 
-        $newDate = (($date === NULL) ? new DateTime() : clone $date);
+        $newDate = (($date === NULL) ? new \DateTime() : clone $date);
 
         switch ($period) {
             case 'year':

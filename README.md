@@ -7,13 +7,47 @@ Both functions used returns a DateTime object, so you can output the date in any
 ## Demo and Examples
 Please see <a href="https://codepad.remoteinterview.io/VNCISPZJVS" target="_blank">CodePad</a> for a demo.
 
-## Usage
+## Installation
 ### Requirements
 PHP >= 5.2
 
-### Basic Usage
+### With Composer - Basic Usage
+```sh
+$ composer require ikunyemingor/First-or-Last-Period-Date
+```
+OR
+```json
+{
+    "require": {
+        "ikunyemingor/First-or-Last-Period-Date": ">=0.1.0"
+    }
+}
+```
 ```php
 <?php
+
+require 'vendor/autoload.php';
+
+use LostCodes\PeriodDate;
+
+$pd = new PeriodDate();
+
+// Get current week first day.
+$date = $pd->firstDayOf('week');
+echo 'The first day of the current week is: ' . $date->format('l, jS F Y') . "\n";
+
+// Get current week last day.
+$date = $pd->lastDayOf('week');
+echo 'The last day of the current week is: ' . $date->format('l, jS F Y') . "\n\n";
+
+?>
+```
+
+### Without Composer - Basic Usage
+```php
+<?php
+
+use LostCodes\PeriodDate;
 
 require_once "includes/PeriodDate.php";
 
@@ -33,8 +67,6 @@ echo 'The last day of the current week is: ' . $date->format('l, jS F Y') . "\n\
 ### More Examples
 ```php
 <?php
-
-require_once "includes/PeriodDate.php";
 
 $pd = new PeriodDate();
 // Get today.
