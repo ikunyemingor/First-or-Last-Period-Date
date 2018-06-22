@@ -13,13 +13,13 @@ PHP >= 5.2
 
 ### With Composer - Basic Usage
 ```sh
-$ composer require ikunyemingor/First-or-Last-Period-Date
+$ composer require ikunyemingor/first-or-last-period-date
 ```
 OR
 ```json
 {
     "require": {
-        "ikunyemingor/First-or-Last-Period-Date": ">=0.1.0"
+        "ikunyemingor/first-or-last-period-date": ">=0.1.0"
     }
 }
 ```
