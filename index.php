@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <?php
-                require_once "PeriodDate.php";
+                require_once "includes/PeriodDate.php";
                 $pd = new PeriodDate();
                 // Get today.
                 echo 'Today is: ' . date("l, jS F Y", strtotime("today")) . "<br><br>";
