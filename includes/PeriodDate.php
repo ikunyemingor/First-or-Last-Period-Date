@@ -11,7 +11,6 @@ namespace LostCodes;
  * @link     http://www.lostCodes.com/
  *
  */
-
 class PeriodDate
 {
 
@@ -140,5 +139,44 @@ class PeriodDate
         }
 
         return $newDate;
+    }
+
+    /**
+     * Get first day of each week between two dates.
+     *
+     * @param string $startDate                Start date of range.
+     * @param string $endDate                  End date of range.
+     * @param string $dayNumber                Day number to use as first day of week where:
+     *                                         1 = Monday,
+     *                                         2 = Tuesday,
+     *                                         3 = Wednesday,
+     *                                         4 = Thursday,
+     *                                         5 = Friday,
+     *                                         6 = Saturday,
+     *                                         7 = Sunday.
+     * @param string $returnedDateFormat       Returned date format.
+     *
+     * @return array
+     */
+    public function getWeekFirstDayBetweenDates($startDate, $endDate, $dayNumber = "1", $returnedDateFormat = "d-m-Y")
+    {
+        $dateArray = [];
+        if (!empty($startDate)) {
+            $endDate = ((empty($endDate)) ? strtotime(date('Y-m-d')) : strtotime($endDate));
+            $days    = [
+                '1' => 'Monday',
+                '2' => 'Tuesday',
+                '3' => 'Wednesday',
+                '4' => 'Thursday',
+                '5' => 'Friday',
+                '6' => 'Saturday',
+                '7' => 'Sunday',
+            ];
+            for ($i = strtotime($days[$dayNumber], strtotime($startDate)); $i <= $endDate; $i = strtotime('+1 week', $i)) {
+                $dateArray[] = date($returnedDateFormat, $i);
+            }
+        }
+
+        return $dateArray;
     }
 }
