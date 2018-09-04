@@ -5,7 +5,7 @@ If you've ever needed to find the first or last day of a given period and you're
 Both functions used returns a DateTime object, so you can output the date in any format available to the PHP date() function.
 
 ## Demo and Examples
-Please see <a href="https://codepad.remoteinterview.io/VNCISPZJVS" target="_blank">CodePad</a> for a demo.
+Please see <a href="https://codeinterview.io/playback/UKRKZMMJIC" target="_blank">CodePad</a> for a demo.
 
 ## Installation
 ### Requirements
@@ -40,6 +40,9 @@ echo 'The first day of the current week is: ' . $date->format('l, jS F Y') . "\n
 $date = $pd->lastDayOf('week');
 echo 'The last day of the current week is: ' . $date->format('l, jS F Y') . "\n\n";
 
+// Get first day of each week between two dates.
+print_r($pd->getWeekFirstDayBetweenDates("2018-01-08", date('Y-m-d')));
+
 ?>
 ```
 
@@ -60,6 +63,9 @@ echo 'The first day of the current week is: ' . $date->format('l, jS F Y') . "\n
 // Get current week last day.
 $date = $pd->lastDayOf('week');
 echo 'The last day of the current week is: ' . $date->format('l, jS F Y') . "\n\n";
+
+// Get first day of each week between two dates.
+print_r($pd->getWeekFirstDayBetweenDates("2018-01-08", date('Y-m-d')));
 
 ?>
 ```
@@ -111,6 +117,9 @@ $date          = $pd->firstDayOf('year', $specifiedDate, "last");
 echo 'The first day of the previous year is: ' . $date->format('l, jS F Y') . "\n";
 $date = $pd->lastDayOf('year', $specifiedDate, "last");
 echo 'The last day of the previous year is: ' . $date->format('l, jS F Y') . "\n\n";
+
+// Get first day of each week between two dates with first day of week as Monday and custom returned date format.
+print_r($pd->getWeekFirstDayBetweenDates("2018-01-08", date('Y-m-d'), "1", date('l, jS F Y')));
 
 ?>
 ```
