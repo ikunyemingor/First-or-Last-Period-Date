@@ -19,7 +19,7 @@ OR
 ```json
 {
     "require": {
-        "ikunyemingor/first-or-last-period-date": ">=0.1.0"
+        "ikunyemingor/first-or-last-period-date": ">=0.1.1"
     }
 }
 ```
