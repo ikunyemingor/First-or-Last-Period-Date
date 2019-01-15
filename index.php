@@ -1,5 +1,7 @@
 <?php
+
 use LostCodes\PeriodDate;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,6 +73,14 @@ use LostCodes\PeriodDate;
                 echo 'The first day of the previous year is: ' . $date->format('l, jS F Y') . "<br>";
                 $date = $pd->lastDayOf('year', $specifiedDate, "last");
                 echo 'The last day of the previous year is: ' . $date->format('l, jS F Y') . "<br><br>";
+
+                echo 'Get first day of each week between ' . date('l, jS F Y', strtotime('2018-11-01')) . ' and ' . date('l, jS F Y') . " with first day of week as Monday and custom returned date format: <br><br>";
+                // Get first day of each week between two dates with first day of week as Monday and custom returned date format.
+                print_r($pd->getWeekFirstDayBetweenDates("2018-01-08", date('Y-m-d'), "1", date('l, jS F Y')));
+
+                echo 'Get all day dates between ' . date('l, jS F Y', strtotime('2018-11-01')) . ' and ' . date('l, jS F Y') . " with an interval and custom returned date format: <br><br>";
+                // Get all day dates between two dates with an interval and custom returned date format.
+                print_r($pd->getDayDatesBetweenTwoDates("2018-11-01", date('Y-m-d'), 1, date('l, jS F Y')));
                 ?>
             </div>
         </div>

@@ -121,6 +121,9 @@ echo 'The last day of the previous year is: ' . $date->format('l, jS F Y') . "\n
 // Get first day of each week between two dates with first day of week as Monday and custom returned date format.
 print_r($pd->getWeekFirstDayBetweenDates("2018-01-08", date('Y-m-d'), "1", date('l, jS F Y')));
 
+// Get all day dates between two dates with an interval and custom returned date format.
+print_r($pd->getDayDatesBetweenTwoDates("2018-11-01", date('Y-m-d'), 1, date('l, jS F Y')));
+
 ?>
 ```
 ## Changes

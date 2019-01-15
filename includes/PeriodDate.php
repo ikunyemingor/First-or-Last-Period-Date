@@ -179,4 +179,35 @@ class PeriodDate
 
         return $dateArray;
     }
+
+    /**
+     * Get all day dates between two dates.
+     *
+     * @param string  $startDate          Start date of range.
+     * @param string  $endDate            End date of range.
+     * @param integer $intervalNumber     Interval between each day.
+     * @param string  $returnedDateFormat Returned date format.
+     *
+     * @return array
+     * @throws \Exception Error.
+     */
+    public function getDayDatesBetweenTwoDates($startDate, $endDate = NULL, $intervalNumber = 1, $returnedDateFormat = "d-m-Y")
+    {
+        $newDatesList = [];
+        try {
+            $startDate = new \DateTime($startDate);
+            $endDate   = ((empty($endDate)) ? new \DateTime() : new \DateTime($endDate));
+            $interval  = new \DateInterval("P{$intervalNumber}D");
+
+            $newDatePeriod = new \DatePeriod($startDate, $interval, $endDate);
+
+            foreach ($newDatePeriod as $newDP) {
+                array_push($newDatesList, $newDP->format($returnedDateFormat));
+            }
+        } catch (\Exception $e) {
+            throw new \Exception("ERROR: {$e->getMessage()}");
+        }
+
+        return $newDatesList;
+    }
 }
