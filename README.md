@@ -67,6 +67,9 @@ echo 'The last day of the current week is: ' . $date->format('l, jS F Y') . "\n\
 // Get first day of each week between two dates.
 print_r($pd->getWeekFirstDayBetweenDates("2018-01-08", date('Y-m-d')));
 
+// Get all day dates between two dates.
+print_r($pd->getDayDatesBetweenTwoDates("2018-01-08", date('Y-m-d')));
+
 ?>
 ```
 
