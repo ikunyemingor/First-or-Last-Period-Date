@@ -1,6 +1,9 @@
 # Change Log
 Changes made so far...
 
+## v0.1.2 (2019-25-01)
+Updated function "firstDayOf" and "lastDayOf" to accept next day | week | Month | Year | Quarter request
+
 ## v0.1.2 (2019-15-01)
 Added new function "getDayDatesBetweenTwoDates" to get all day dates between two dates
 

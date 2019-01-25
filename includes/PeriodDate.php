@@ -54,19 +54,19 @@ class PeriodDate
 
         switch ($period) {
             case 'year':
-                $newDate->modify('first day of january ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : $newDate->format('Y')));
+                $newDate->modify('first day of january ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : (($periodTime == "next") ? (intval($newDate->format('Y')) + 1) : $newDate->format('Y'))));
                 break;
 
             case 'quarter':
                 $month = $newDate->format('n');
                 if ($month < 4) {
-                    $newDate->modify('first day of january ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : $newDate->format('Y')));
+                    $newDate->modify('first day of january ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : (($periodTime == "next") ? (intval($newDate->format('Y')) + 1) : $newDate->format('Y'))));
                 } else if ($month > 3 && $month < 7) {
-                    $newDate->modify('first day of april ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : $newDate->format('Y')));
+                    $newDate->modify('first day of april ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : (($periodTime == "next") ? (intval($newDate->format('Y')) + 1) : $newDate->format('Y'))));
                 } else if ($month > 6 && $month < 10) {
-                    $newDate->modify('first day of july ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : $newDate->format('Y')));
+                    $newDate->modify('first day of july ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : (($periodTime == "next") ? (intval($newDate->format('Y')) + 1) : $newDate->format('Y'))));
                 } else if ($month > 9) {
-                    $newDate->modify('first day of october ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : $newDate->format('Y')));
+                    $newDate->modify('first day of october ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : (($periodTime == "next") ? (intval($newDate->format('Y')) + 1) : $newDate->format('Y'))));
                 }
                 break;
 
@@ -112,19 +112,19 @@ class PeriodDate
 
         switch ($period) {
             case 'year':
-                $newDate->modify('last day of december ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : $newDate->format('Y')));
+                $newDate->modify('last day of december ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : (($periodTime == "next") ? (intval($newDate->format('Y')) + 1) : $newDate->format('Y'))));
                 break;
 
             case 'quarter':
                 $month = $newDate->format('n');
                 if ($month < 4) {
-                    $newDate->modify('last day of march ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : $newDate->format('Y')));
+                    $newDate->modify('last day of march ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : (($periodTime == "next") ? (intval($newDate->format('Y')) + 1) : $newDate->format('Y'))));
                 } else if ($month > 3 && $month < 7) {
-                    $newDate->modify('last day of june ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : $newDate->format('Y')));
+                    $newDate->modify('last day of june ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : (($periodTime == "next") ? (intval($newDate->format('Y')) + 1) : $newDate->format('Y'))));
                 } else if ($month > 6 && $month < 10) {
-                    $newDate->modify('last day of september ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : $newDate->format('Y')));
+                    $newDate->modify('last day of september ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : (($periodTime == "next") ? (intval($newDate->format('Y')) + 1) : $newDate->format('Y'))));
                 } else if ($month > 9) {
-                    $newDate->modify('last day of december ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : $newDate->format('Y')));
+                    $newDate->modify('last day of december ' . (($periodTime == "last") ? (intval($newDate->format('Y')) - 1) : (($periodTime == "next") ? (intval($newDate->format('Y')) + 1) : $newDate->format('Y'))));
                 }
                 break;
 
